@@ -1,0 +1,174 @@
+@import "./variables";
+@import "./default";
+
+@include mobile() {}
+html{
+    background: #001628;
+}
+body {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    background: #fff;
+    padding: 0 $padding;
+
+    @include laptop() {
+        width: 100%;
+        header{
+            width: 100%;
+            height: 80px;
+            box-shadow: 0 4px 8px colors(shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0 $padding;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .logo{
+                width: 60px;
+                height: 60px;
+                position: relative;
+                img{
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+            nav{
+                ul{
+                    display: flex;
+                    list-style: none;
+
+                    a{
+                        color: colors(black);
+                        padding: 10px;
+                        &.contact-me{
+                            border: 1px solid colors(blue);
+                            color: colors(blue);
+                            border-radius: 2px;
+                            margin-left: 40px;
+                        }
+                    }
+                }
+            }
+        }
+
+        main{
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .hi{
+                width: 50%;
+                align-self: center;
+
+                h1{
+                    font-family: 'Comfortaa', cursive;
+                    font-size: 50px;
+                    color: colors(blue);
+                    margin-bottom: 20px;
+                }
+
+                p{
+                    color: colors(black);
+                    margin-bottom: 20px;
+
+                    &.hello{
+                        color: #000;
+                    }
+                }
+
+                button{
+                    padding: 10px 30px;
+                    border: none;
+                    background: colors(blue);
+                    color: #fff;
+                    border-radius: 20px;
+                    margin-top: 20px;
+                    font-size: 18px;
+                }
+            }
+
+            .obj{
+                .container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  }
+                  .box{
+                    width: 200px;
+                    height: 200px;
+                    transform-style: preserve-3d;
+                    position: relative;
+                    animation: rotate 8s linear infinite;
+                    transform: translateZ(100px) rotateY(80deg);
+                  }
+                  .box>div{
+                    width: 200px;
+                    height: 200px;
+                    position: absolute;
+                    opacity: .8;
+                    text-align: center;
+                    font-size: 40px;
+                    line-height: 200px;
+                    color: #fff;
+                  }
+                  .element1{
+                    background: #130101;
+                    z-index: 1;
+                    transform: translateZ(-100px);
+                  }
+                  .element2{
+                    background: #018FD1;
+                    z-index: 2;
+                    transform: rotateY(90deg) translateX(100px);
+                    transform-origin: right
+                  }
+                  .element3{
+                    background: #F78000;
+                    z-index: 3;
+                    transform: rotateY(-90deg) translateX(-100px);
+                    transform-origin: left;
+                  }
+                  .element4{
+                    background: #54E60B;
+                    z-index: 4;
+                    transform: rotateX(90deg) translateY(-100px);
+                    transform-origin: top;
+                  }
+                  .element5{
+                    background: #CC0BE6;
+                    z-index: 5;
+                    transform: rotateX(-90deg) translateY(100px);
+                    transform-origin: bottom;
+                  }
+                  .element6{
+                    background: #FF0037;
+                    z-index: 6;
+                    transform: translateZ(100px);
+                  }
+                  .cercl{
+                    width: 100px;
+                    height: 100px;
+                    background: #ffffff;
+                    border-radius: 50%;
+                    z-index: 2;
+                  }
+                  @keyframes rotate {
+                    from{
+                      transform: rotateY(0) rotateX(0) rotateZ(0);
+                    }
+                    to{
+                      transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+                    }
+                  }
+            }
+        }
+
+    }
+}

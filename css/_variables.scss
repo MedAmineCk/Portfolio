@@ -1,0 +1,38 @@
+$colors:(
+    shadow: rgba(0,0,0,.25),
+    black: #3F3F3F,
+    blue: #2F80ED
+);
+$padding: 60px;
+$border: 1px solid #607D8B;
+$border-radius: 4px;
+
+@function colors($color-name) {
+    @return map-get($map: $colors, $key: $color-name);
+}
+
+$laptop: 1600px;
+$tablet: 1024px;
+$mobile: 480px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (max-width: #{$laptop}) {
+        @content;
+    }
+}
+
+//******** Fonts ********//
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
